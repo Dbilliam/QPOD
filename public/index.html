@@ -10,6 +10,13 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+	<!-- 
+		- google font link
+	-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -26,7 +33,7 @@
     -->
     <title>React App</title>
   </head>
-  <body>
+  <body id="top" >
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -39,5 +46,45 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="text/javascript">
+
+
+// element toggle function
+const elemToggleFunc = function (elem) { elem.classList.toggle("active"); }
+
+
+
+// navbar variables
+const navbar = document.querySelector("[data-navbar]");
+const navbarOpenBtn = document.querySelector("[data-nav-open-btn]");
+const navbarCloseBtn = document.querySelector("[data-nav-close-btn]");
+
+navbarOpenBtn.addEventListener("click", function () {
+  elemToggleFunc(navbar);
+});
+
+navbarCloseBtn.addEventListener("click", function () {
+  elemToggleFunc(navbar);
+});
+
+
+
+// go top variable
+const goTopBtn = document.querySelector("[data-go-top]");
+
+// window scroll event for go top button
+window.addEventListener("scroll", function () {
+
+  if (this.window.scrollY >= 500) {
+    goTopBtn.classList.add("active");
+  } else {
+    goTopBtn.classList.remove("active");
+  }
+
+});
+
+    </script>
   </body>
 </html>
